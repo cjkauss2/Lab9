@@ -67,6 +67,11 @@ public class Pokemon {
     private String name;
 
     /**
+     * A 5 sided dice used to calculate attack damage.
+     */
+    public Dice d5;
+
+    /**
      * A 6 sided dice used to calculate attack damage.
      */
     public Dice d6;
@@ -83,8 +88,10 @@ public class Pokemon {
      * defense level of 0, and an empty name.
      */
     public Pokemon() {
+        final int d5num = 5;
         final int d6num = 6;
         final int d20num = 20;
+        this.d5 = new Dice(d5num);
         this.d6 = new Dice(d6num);
         this.d20 = new Dice(d20num);
         this.hitPoints = 0;
